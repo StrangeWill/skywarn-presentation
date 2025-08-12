@@ -105,7 +105,7 @@ items:
         text: Deliver the human observations radar can’t capture.    
       - head: Promote Public Safety
         text: Help communities prepare for and respond to severe weather threats.
-  - title: Mission & Purpose
+  - title: Who We Are
     icon: person
     color: blue
     sections:
