@@ -26,11 +26,29 @@ team:
   - name: Philip Sutherland
     ham: KQ4EVW
     img: images/placeholder.webp
+  - name: Mark Rose
+    ham: KA0YDC
+    img: images/placeholder.webp
   - name: Jim Knight
     ham: KD4EHN
     img: images/placeholder.webp
   - name: James Wells
     ham: KO4MKP
+    img: images/placeholder.webp
+  - name: Stuart Neil
+    ham: KQ4KIH
+    img: images/placeholder.webp
+  - name: Ronnie Craig
+    gmrs: WRKJ453 
+    img: images/placeholder.webp
+  - name: Jeff Martin
+    ham: W4EMZ
+    img: images/placeholder.webp
+  - name: Gary Ownsby
+    ham: AK4ZX
+    img: images/placeholder.webp
+  - name: Dewayne Siddon
+    ham: KE4IDH
     img: images/placeholder.webp
   - name: William Roush
     ham: W3UWU
@@ -45,7 +63,7 @@ const base = import.meta.env.BASE_URL
 const pub  = (p) => p ? base + p.replace(/^\/+/, '') : null
 </script>
 
-<div class="grid grid-cols-3 gap-6 mt-8">
+<div class="grid grid-cols-6 gap-6 mt-8">
   <v-clicks>
     <div
       v-for="(person, index) in $frontmatter.team"
