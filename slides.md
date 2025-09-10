@@ -1,7 +1,7 @@
 ---
 theme: default
 background: images/background.webp
-title: TAG Skywarn
+title: TAG SKYWARN®
 class: text-center
 drawings:
   persist: false
@@ -9,7 +9,7 @@ transition: slide-left
 mdc: true
 ---
 
-# TAG Skywarn 
+# TAG SKYWARN® 
 
 Enhancing Severe Weather Safety Through Amateur and GMRS Radio
 
@@ -19,6 +19,15 @@ Enhancing Severe Weather Safety Through Amateur and GMRS Radio
   SKYWARN® and the SKYWARN® logo are registered trademarks of the 
   National Oceanic and Atmospheric Administration, used with permission.
 </div>
+
+
+<style>
+.text-center h1 {
+  background-color: #e0e0e0ff;
+  background-image: none;
+  text-align: center;
+}
+</style>
 
 ---
 transition: fade-out
@@ -95,24 +104,12 @@ const pub  = (p) => p ? base + p.replace(/^\/+/, '') : null
   </v-clicks>
 </div>
 
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
-
 ---
 transition: fade-out
 class: text-center
 ---
 
-<h1>SKYWARN® History</h1>
+# SKYWARN® History
 
 <div class="mt-6 grid grid-cols-5 gap-4">
   <v-clicks>
@@ -223,21 +220,6 @@ class: text-center
   </v-clicks>
 </div>
 
-
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
-
-
 ---
 transition: fade-out
 items:
@@ -275,7 +257,7 @@ items:
 
 ---
 
-# What Is Skywarn?
+# What Is SKYWARN®?
 
 <div grid grid-cols-3 gap-3 h-75>
   <v-clicks>
@@ -302,7 +284,7 @@ items:
 </div>
 
 <div class="text-xs opacity-70 mt-4">
-  Skywarn began in the 1960s after deadly tornado outbreaks highlighted the need for trained spotters.
+  SKYWARN® began in the 1960s after deadly tornado outbreaks highlighted the need for trained spotters.
 </div>
 
 ---
@@ -310,11 +292,11 @@ layout: image-left
 image: /images/hamradio.webp
 ---
 
-# TAG (TN-AL-GA) Skywarn Today
+# TAG (TN-AL-GA) SKYWARN® Today
 
-Weekly Net: TAG Skywarn Net meets every Tuesday at 8:00 PM Eastern on 145.390 MHz with 107.2 Hz tone. GMRS operators join on NGGMRS Northern Core repeaters starting at 7:00 PM.
+Weekly Net: TAG SKYWARN® Net meets every Tuesday at 8:00 PM Eastern on 145.390 MHz with 107.2 Hz tone. GMRS operators join on NGGMRS Northern Core repeaters starting at 7:00 PM.
 
-Training Series: Skywarn Training Schedule covers a wide range of topics - from heat/hurricane prep to reporting protocols and technical drills (e.g., What3Words, simplex relay training).
+Training Series: SKYWARN® Training Schedule covers a wide range of topics - from heat/hurricane prep to reporting protocols and technical drills (e.g., What3Words, simplex relay training).
 
 ---
 transition: slide-up
@@ -404,7 +386,7 @@ When radio isn’t available, reports can also be sent via the mPING app, NWS sp
 
 ## Strengthening With GMRS
 
-North Georgia GMRS (NGGMRS) has built an enhanced Skywarn network, expanding coverage across SE Tennessee, NW Georgia, and NE Alabama.  
+North Georgia GMRS (NGGMRS) has built an enhanced SKYWARN® network, expanding coverage across SE Tennessee, NW Georgia, and NE Alabama.  
 
 ✅ Redundant paths matter:  
 - Primary: 145.390 MHz (-, 107.2 Hz)  
@@ -423,13 +405,58 @@ Weekly practice and shared infrastructure build resilience before critical weath
 
 **When Nets Activate**  
 - Triggered by NWS MRX or Emergency Management during severe watches/warnings.  
-- Activation notices pushed via the *TN-AL-GA Regional Skywarn Net* Telegram channel.  
+- Activation notices pushed via the *TN-AL-GA Regional SKYWARN® Net* Telegram channel.  
 - Reports relayed directly to NWS offices.
 
 
 # How to Plug In
 
-- 📚 Attend/host NWS Skywarn training *(covers storm ID, reporting methods, and safety)*  
+- 📚 Attend/host NWS SKYWARN® training *(covers storm ID, reporting methods, and safety)*  
 - 📻 Join Tuesday nets (Ham 8:00 PM / GMRS 7:00 PM).  
 - 📝 Practice correct, criteria-based reporting.  
 - 📢 Recruit & spread awareness - more trained spotters = stronger coverage.
+
+---
+transition: fade-out
+class: text-center
+---
+
+# August 12, 2025 - Chattanooga Flash Flooding
+
+<div class="mt-6 grid grid-cols-2 gap-6">
+  <v-clicks>
+    <div class="rounded-xl border border-white/10 bg-white/5 p-4 text-left backdrop-blur">
+      <div class="flex items-center gap-2 mb-2">
+        <div class="i-carbon:warning-alt text-red-300 text-lg"></div>
+        <div class="text-xs uppercase tracking-wide text-red-200/90 font-semibold">Impact</div>
+      </div>
+      <div class="text-sm font-semibold">Second-Wettest Day on Record</div>
+      <div class="text-xs opacity-80 space-y-2">
+        • Over 6 in (~6.4 in) of rain in a single day.<br>
+        • Widespread flash flooding closed I-24, submerged roads, and triggered dozens of rescues.<br>
+        • A state of emergency was declared in Hamilton County.
+      </div>
+    </div>
+    <div class="rounded-xl border border-white/10 bg-white/5 p-4 text-left backdrop-blur">
+      <div class="flex items-center gap-2 mb-2">
+        <div class="i-carbon:ambulance text-orange-300 text-lg"></div>
+        <div class="text-xs uppercase tracking-wide text-orange-200/90 font-semibold">Tragedy & Response</div>
+      </div>
+      <div class="text-sm font-semibold">Fatalities & Rescues</div>
+      <div class="text-xs opacity-80 space-y-2">
+        • A mother, father, and child were killed when a water-saturated tree fell on their car in East Ridge.<br>
+        • A fourth individual was swept away after bypassing rescue barricades.<br>
+        • Fire & sheriff’s deputies performed dozens of high-water rescues - including stranded motorists and homeowners - using boats and rapid-response teams.
+      </div>
+    </div>
+  </v-clicks>
+</div>
+<div class="mt-6 grid grid-cols-3 gap-4">
+  <v-clicks>
+    <img src="/images/flood/flood-1.png" alt="Flooded road" class="rounded-lg shadow-md object-cover h-40 w-full" />
+    <img src="/images/flood/flood-2.jpg" alt="Rescue crews" class="rounded-lg shadow-md object-cover h-40 w-full" />
+    <img src="/images/flood/flood-3.jpg" alt="Cars submerged" class="rounded-lg shadow-md object-cover h-40 w-full" />
+  </v-clicks>
+</div>
+
+
