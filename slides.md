@@ -26,23 +26,29 @@ layout: center
 class: text-center
 glowSeed: 205
 team:
-  - name: Philip Sutherland
-    ham: KQ4EVW
-    img: /images/placeholder.webp
   - name: Mark Rose
+    title: District Coordinator
     ham: KA0YDC
     img: /images/placeholder.webp
+  - name: Philip Sutherland
+    title: Net Control
+    ham: KQ4EVW
+    img: /images/team/philipsutherland.jpg
   - name: Jim Knight
+    title: Alt Net Control
     ham: KD4EHN
     img: /images/placeholder.webp
   - name: James Wells
+    title: Net Control
     ham: KO4MKP
     gmrs: WRKK629
     img: /images/team/jameswells.jpg
   - name: Stuart Neil
+    title: Net Control
     ham: KQ4KIH
-    img: /images/placeholder.webp
+    img: /images/team/stuartneil.jpg
   - name: Ronnie Craig
+    title: Net Control
     gmrs: WRKJ453 
     img: /images/placeholder.webp
   - name: Jeff Martin
@@ -50,11 +56,13 @@ team:
     img: /images/placeholder.webp
   - name: Gary Ownsby
     ham: AK4ZX
-    img: /images/placeholder.webp
+    img: /images/team/garyownsby.jpg
   - name: Dewayne Siddon
+    title: ARES/ACS Emergency Coordinator
     ham: KE4IDH
-    img: /images/placeholder.webp
+    img: /images/team/dewaynesiddon.jpg
   - name: William Roush
+    title: Net Control
     ham: W3UWU
     gmrs: WRWF503
     img: /images/team/williamroush.png
@@ -67,7 +75,7 @@ const base = import.meta.env.BASE_URL
 const pub  = (p) => p ? base + p.replace(/^\/+/, '') : null
 </script>
 
-<div class="grid grid-cols-6 gap-6 mt-8">
+<div class="grid grid-cols-5 gap-6 mt-5">
   <v-clicks>
     <div
       v-for="(person, index) in $frontmatter.team"
@@ -77,6 +85,9 @@ const pub  = (p) => p ? base + p.replace(/^\/+/, '') : null
     >
       <img :src="pub(person.img)" :alt="person.name" class="w-28 h-28 rounded-full object-cover shadow" />
       <div class="mt-3 font-bold">{{ person.name }}</div>
+      <div v-if="person.title" class="text-sm text-gray-400">
+        {{ person.title }} 
+      </div>
       <div v-if="person.ham || person.gmrs" class="text-sm text-gray-400">
         {{ [person.ham, person.gmrs].filter(Boolean).join(' / ') }}
       </div>
