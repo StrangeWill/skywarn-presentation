@@ -439,7 +439,7 @@ class: text-center
     </div>
     <div class="rounded-xl border border-white/10 bg-white/5 p-4 text-left backdrop-blur">
       <div class="flex items-center gap-2 mb-2">
-        <div class="i-carbon:ambulance text-orange-300 text-lg"></div>
+        <div class="i-carbon:health-cross text-orange-300 text-lg"></div>
         <div class="text-xs uppercase tracking-wide text-orange-200/90 font-semibold">Tragedy & Response</div>
       </div>
       <div class="text-sm font-semibold">Fatalities & Rescues</div>
