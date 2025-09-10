@@ -109,6 +109,137 @@ h1 {
 
 ---
 transition: fade-out
+class: text-center
+---
+
+<h1>SKYWARN® History</h1>
+
+<div class="mt-6 grid grid-cols-5 gap-4">
+  <v-clicks>
+    <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-left backdrop-blur">
+      <div class="flex items-center gap-2 mb-2">
+        <div class="i-carbon:satellite-weather text-blue-300 text-lg"></div>
+        <div class="text-xs uppercase tracking-wide text-blue-200/90 font-semibold">1940s</div>
+      </div>
+      <div class="text-sm font-semibold">Early Spotter Groups</div>
+      <div class="text-xs opacity-80">
+        Organized volunteers protect critical sites (e.g., munitions plants).  
+        ~200+ local networks by 1945.
+      </div>
+    </div>
+    <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-left backdrop-blur">
+      <div class="flex items-center gap-2 mb-2">
+        <div class="i-carbon:rain-drop text-blue-300 text-lg"></div>
+        <div class="text-xs uppercase tracking-wide text-blue-200/90 font-semibold">1950s</div>
+      </div>
+      <div class="text-sm font-semibold">Proving Value</div>
+      <div class="text-xs opacity-80">
+        Spotters give advance tornado warnings;  
+        NWS begins public severe weather forecast products.
+      </div>
+    </div>
+    <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-left backdrop-blur">
+      <div class="flex items-center gap-2 mb-2">
+        <div class="i-carbon:warning-alt text-red-300 text-lg"></div>
+        <div class="text-xs uppercase tracking-wide text-red-200/90 font-semibold">1965</div>
+      </div>
+      <div class="text-sm font-semibold">Palm Sunday Outbreak</div>
+      <div class="text-xs opacity-80">
+        82 tornadoes, 260 deaths; spotters save lives but networks had dwindled -   
+        a wake-up call for national training & recruiting.
+      </div>
+    </div>
+    <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-left backdrop-blur">
+      <div class="flex items-center gap-2 mb-2">
+        <div class="i-carbon:tools text-emerald-300 text-lg"></div>
+        <div class="text-xs uppercase tracking-wide text-emerald-200/90 font-semibold">Post-1965</div>
+      </div>
+      <div class="text-sm font-semibold">Program Built</div>
+      <div class="text-xs opacity-80">
+        NWS renews training & recruitment, foundation for today’s  
+        <span class="font-semibold">SKYWARN® Spotter Program</span>.
+      </div>
+    </div>
+    <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-left backdrop-blur">
+      <div class="flex items-center gap-2 mb-2">
+        <div class="i-carbon:earth text-teal-300 text-lg"></div>
+        <div class="text-xs uppercase tracking-wide text-teal-200/90 font-semibold">Today</div>
+      </div>
+      <div class="text-sm font-semibold">Nationwide Network</div>
+      <div class="text-xs opacity-80">
+        300,000+ trained volunteers provide ground truth that radar can’t—  
+        enabling better warnings & lead time.
+      </div>
+    </div>
+  </v-clicks>
+</div>
+<div class="mt-6 grid grid-cols-4 gap-4">
+  <v-clicks>
+    <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-left backdrop-blur">
+      <div class="flex items-center gap-2 mb-2">
+        <div class="i-carbon:radar text-cyan-300 text-lg"></div>
+        <div class="text-xs uppercase tracking-wide text-cyan-200/90 font-semibold">Lesson</div>
+      </div>
+      <div class="text-sm font-semibold">Radar Alone Isn’t Enough</div>
+      <div class="text-xs opacity-80">
+        Spotters provide confirmation radar can’t -   
+        e.g., tornado on the ground vs. aloft.
+      </div>
+    </div>
+    <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-left backdrop-blur">
+      <div class="flex items-center gap-2 mb-2">
+        <div class="i-carbon:favorite text-green-300 text-lg"></div>
+        <div class="text-xs uppercase tracking-wide text-green-200/90 font-semibold">Lesson</div>
+      </div>
+      <div class="text-sm font-semibold">Volunteers Save Lives</div>
+      <div class="text-xs opacity-80">
+        Reports lead to faster warnings, reduced casualties,  
+        and stronger community trust.
+      </div>
+    </div>
+    <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-left backdrop-blur">
+      <div class="flex items-center gap-2 mb-2">
+        <div class="i-carbon:education text-lime-300 text-lg"></div>
+        <div class="text-xs uppercase tracking-wide text-lime-200/90 font-semibold">Lesson</div>
+      </div>
+      <div class="text-sm font-semibold">Training = Trust</div>
+      <div class="text-xs opacity-80">
+        Consistent, criteria-based reports make  
+        NWS warnings more accurate & actionable.
+      </div>
+    </div>
+    <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-left backdrop-blur">
+      <div class="flex items-center gap-2 mb-2">
+        <div class="i-carbon:group text-teal-300 text-lg"></div>
+        <div class="text-xs uppercase tracking-wide text-teal-200/90 font-semibold">Lesson</div>
+      </div>
+      <div class="text-sm font-semibold">Community Resilience</div>
+      <div class="text-xs opacity-80">
+        Local nets + ham & GMRS partnerships =  
+        stronger backbone for emergency response.
+      </div>
+    </div>
+
+  </v-clicks>
+</div>
+
+
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+
+---
+transition: fade-out
 items:
   - title: Mission & Purpose
     icon: satellite-weather
