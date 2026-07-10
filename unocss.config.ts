@@ -1,6 +1,6 @@
 import { defineConfig, presetUno, presetAttributify, presetIcons } from "unocss";
 
-const colors = ["amber", "blue", "green", "red", "teal"];
+const colors = ["amber", "blue", "green", "red", "teal", "cyan", "orange", "gray", "yellow"];
 const bgShades = ["800", "800/40", "800/20", "900/30"];
 const icons = [
   "download",
@@ -21,7 +21,17 @@ const icons = [
   "events",
   "thunderstorm-severe",
   "police",
-  "user-simulation"
+  "user-simulation",
+  "partly-cloudy",
+  "wind-gusts",
+  "rain-drop",
+  "snow",
+  "warning",
+  "connect",
+  "satellite",
+  "headphones",
+  "group",
+  "phone"
 ];
 
 export default defineConfig({

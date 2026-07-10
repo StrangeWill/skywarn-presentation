@@ -9,14 +9,14 @@ transition: slide-left
 mdc: true
 ---
 
-# TAG SKYWARN® 
+# TAG SKYWARN®
 
 Enhancing Severe Weather Safety Through Amateur and GMRS Radio
 
-<div class="mt-12 py-1" hover:bg="white op-10">Oct 3–4, 2025 • Chattanooga Hamfest</div>
+<div class="mt-12 py-1" hover:bg="white op-10">Hamilton County, Tennessee • TN-AL-GA Region</div>
 
 <div class="absolute bottom-2 left-4 text-xs text-gray-400">
-  SKYWARN® and the SKYWARN® logo are registered trademarks of the 
+  SKYWARN® and the SKYWARN® logo are registered trademarks of the
   National Oceanic and Atmospheric Administration, used with permission.
 </div>
 
@@ -31,74 +31,74 @@ Enhancing Severe Weather Safety Through Amateur and GMRS Radio
 
 ---
 transition: fade-out
-layout: center
 class: text-center
-glowSeed: 205
-team:
-  - name: Mark Rose
-    title: District Coordinator
-    ham: KA0YDC
-    img: /images/placeholder.webp
-  - name: Philip Sutherland
-    title: Net Control
-    ham: KQ4EVW
-    img: /images/team/philipsutherland.jpg
-  - name: Jim Knight
-    title: Alt Net Control
-    ham: KD4EHN
-    img: /images/placeholder.webp
-  - name: James Wells
-    title: Net Control
-    ham: KO4MKP
-    gmrs: WRKK629
-    img: /images/team/jameswells.jpg
-  - name: Stuart Neil
-    title: Net Control
-    ham: KQ4KIH
-    img: /images/team/stuartneil.jpg
-  - name: Ronnie Craig
-    title: Net Control
-    gmrs: WRKJ453 
-    img: /images/placeholder.webp
-  - name: Jeff Martin
-    ham: W4EMZ
-    img: /images/placeholder.webp
-  - name: Gary Ownsby
-    ham: AK4ZX
-    img: /images/team/garyownsby.jpg
-  - name: Dewayne Siddon
-    title: ARES/ACS Emergency Coordinator
-    ham: KE4IDH
-    img: /images/team/dewaynesiddon.jpg
-  - name: William Roush
-    title: Net Control
-    ham: W3UWU
-    gmrs: WRWF503
-    img: /images/team/williamroush.png
 ---
 
-# Meet the Team
+# This Happened in Our County
 
-<script setup>
-const base = import.meta.env.BASE_URL
-const pub  = (p) => p ? base + p.replace(/^\/+/, '') : null
-</script>
+<div class="mt-4 flex flex-col items-center gap-4">
+  <img src="/images/flood/flood-1.png" alt="August 12, 2025 flood damage" class="rounded-lg shadow-xl object-cover max-h-72" />
+  <div class="text-2xl font-semibold">August 12, 2025: ~6.4 inches of rain in a single day</div>
+  <div class="text-base opacity-80">Three killed. Dozens of water rescues. State of emergency in Hamilton County.</div>
+  <div class="text-sm opacity-60 mt-2">This is why trained spotters matter, and why you might be one.</div>
+</div>
 
-<div class="grid grid-cols-5 gap-6 mt-5">
+---
+transition: fade-out
+items:
+  - title: Mission & Purpose
+    icon: satellite-weather
+    color: blue
+    sections:
+      - head: Support NWS Warning Operations
+        text: Provide timely, accurate ground reports to enhance severe weather forecasts and warnings.
+      - head: Bridge Between Public & Meteorologists
+        text: Deliver the human observations radar can't capture.
+      - head: Promote Public Safety
+        text: Help communities prepare for and respond to severe weather threats.
+  - title: Who We Are
+    icon: person
+    color: blue
+    sections:
+      - head: Nationwide Network
+        text: Over 300,000 trained volunteers across the United States.
+      - head: Diverse Backgrounds
+        text: Amateur radio operators, emergency responders, weather enthusiasts, and community members.
+      - head: Local & Regional Ties
+        text: Organized at county or regional levels, working closely with NWS offices.
+  - title: How We Operate
+    icon: radio-combat
+    color: blue
+    sections:
+      - head: Real-Time Reporting
+        text: Observations sent via ham radio nets, phone hotlines, apps, or online forms.
+      - head: Training & Certification
+        text: NWS-led courses on severe weather recognition and safe reporting practices.
+      - head: Integration With Emergency Services
+        text: Coordinate with local emergency management and first responders.
+---
+
+# What Is SKYWARN®?
+
+<div grid grid-cols-3 gap-3 h-75>
   <v-clicks>
-    <div
-      v-for="(person, index) in $frontmatter.team"
-      :key="person.name"
-      class="flex flex-col items-center text-center transition-all duration-500 ease-in-out"      
-      :class="$clicks < index +  1 ? 'translate-y-6 opacity-0' : 'translate-y-0 opacity-100'"
-    >
-      <img :src="pub(person.img)" :alt="person.name" class="w-28 h-28 rounded-full object-cover shadow" />
-      <div class="mt-3 font-bold">{{ person.name }}</div>
-      <div v-if="person.title" class="text-sm text-gray-400">
-        {{ person.title }} 
+    <div border="2 solid white/5" rounded-lg overflow-hidden bg="white/5" backdrop-blur-sm h-full
+      v-for="(item, index) in $frontmatter.items"
+      class="transition-all duration-500 ease-in-out"
+      :class="$clicks < index +  1 ? 'translate-y-6 opacity-0' : 'translate-y-0 opacity-100'">
+      <div flex items-center bg="white/10" backdrop-blur px-3 py-2 rounded-md>
+        <div :class="`i-carbon:${item.icon} text-${item.color}-300`" text-sm mr-2 />
+        <div font-semibold>
+          {{ item.title }}
+        </div>
       </div>
-      <div v-if="person.ham || person.gmrs" class="text-sm text-gray-400">
-        {{ [person.ham, person.gmrs].filter(Boolean).join(' / ') }}
+      <div px-4 py-3>
+        <div flex flex-col gap-3>
+          <div v-for="(section, index) in item.sections">
+            <div text-sm font-medium>{{ section.head }}</div>
+            <div text-xs opacity-70>{{ section.text }}</div>
+          </div>
+        </div>
       </div>
     </div>
   </v-clicks>
@@ -120,7 +120,7 @@ class: text-center
       </div>
       <div class="text-sm font-semibold">Early Spotter Groups</div>
       <div class="text-xs opacity-80">
-        Organized volunteers protect critical sites (e.g., munitions plants).  
+        Organized volunteers protect critical sites (e.g., munitions plants).
         ~200+ local networks by 1945.
       </div>
     </div>
@@ -131,7 +131,7 @@ class: text-center
       </div>
       <div class="text-sm font-semibold">Proving Value</div>
       <div class="text-xs opacity-80">
-        Spotters give advance tornado warnings;  
+        Spotters give advance tornado warnings;
         NWS begins public severe weather forecast products.
       </div>
     </div>
@@ -142,8 +142,8 @@ class: text-center
       </div>
       <div class="text-sm font-semibold">Palm Sunday Outbreak</div>
       <div class="text-xs opacity-80">
-        82 tornadoes, 260 deaths; spotters save lives but networks had dwindled -   
-        a wake-up call for national training & recruiting.
+        47 tornadoes across 6 states, 271 deaths; networks had dwindled.
+        A wake-up call for national training & recruiting.
       </div>
     </div>
     <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-left backdrop-blur">
@@ -153,7 +153,7 @@ class: text-center
       </div>
       <div class="text-sm font-semibold">Program Built</div>
       <div class="text-xs opacity-80">
-        NWS renews training & recruitment, foundation for today’s  
+        NWS renews training & recruitment, foundation for today's
         <span class="font-semibold">SKYWARN® Spotter Program</span>.
       </div>
     </div>
@@ -164,127 +164,11 @@ class: text-center
       </div>
       <div class="text-sm font-semibold">Nationwide Network</div>
       <div class="text-xs opacity-80">
-        300,000+ trained volunteers provide ground truth that radar can’t—  
+        300,000+ trained volunteers provide ground truth that radar can't,
         enabling better warnings & lead time.
       </div>
     </div>
   </v-clicks>
-</div>
-<div class="mt-6 grid grid-cols-4 gap-4">
-  <v-clicks>
-    <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-left backdrop-blur">
-      <div class="flex items-center gap-2 mb-2">
-        <div class="i-carbon:radar text-cyan-300 text-lg"></div>
-        <div class="text-xs uppercase tracking-wide text-cyan-200/90 font-semibold">Lesson</div>
-      </div>
-      <div class="text-sm font-semibold">Radar Alone Isn’t Enough</div>
-      <div class="text-xs opacity-80">
-        Spotters provide confirmation radar can’t -   
-        e.g., tornado on the ground vs. aloft.
-      </div>
-    </div>
-    <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-left backdrop-blur">
-      <div class="flex items-center gap-2 mb-2">
-        <div class="i-carbon:favorite text-green-300 text-lg"></div>
-        <div class="text-xs uppercase tracking-wide text-green-200/90 font-semibold">Lesson</div>
-      </div>
-      <div class="text-sm font-semibold">Volunteers Save Lives</div>
-      <div class="text-xs opacity-80">
-        Reports lead to faster warnings, reduced casualties,  
-        and stronger community trust.
-      </div>
-    </div>
-    <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-left backdrop-blur">
-      <div class="flex items-center gap-2 mb-2">
-        <div class="i-carbon:education text-lime-300 text-lg"></div>
-        <div class="text-xs uppercase tracking-wide text-lime-200/90 font-semibold">Lesson</div>
-      </div>
-      <div class="text-sm font-semibold">Training = Trust</div>
-      <div class="text-xs opacity-80">
-        Consistent, criteria-based reports make  
-        NWS warnings more accurate & actionable.
-      </div>
-    </div>
-    <div class="rounded-xl border border-white/10 bg-white/5 p-3 text-left backdrop-blur">
-      <div class="flex items-center gap-2 mb-2">
-        <div class="i-carbon:group text-teal-300 text-lg"></div>
-        <div class="text-xs uppercase tracking-wide text-teal-200/90 font-semibold">Lesson</div>
-      </div>
-      <div class="text-sm font-semibold">Community Resilience</div>
-      <div class="text-xs opacity-80">
-        Local nets + ham & GMRS partnerships =  
-        stronger backbone for emergency response.
-      </div>
-    </div>
-
-  </v-clicks>
-</div>
-
----
-transition: fade-out
-items:
-  - title: Mission & Purpose
-    icon: satellite-weather
-    color: blue
-    sections:
-      - head: Support NWS Warning Operations
-        text: Provide timely, accurate ground reports to enhance severe weather forecasts and warnings.
-      - head: Bridge Between Public & Meteorologists
-        text: Deliver the human observations radar can’t capture.    
-      - head: Promote Public Safety
-        text: Help communities prepare for and respond to severe weather threats.
-  - title: Who We Are
-    icon: person
-    color: blue
-    sections:
-      - head: Nationwide Network
-        text: Over 300,000 trained volunteers across the United States.
-      - head: Diverse Backgrounds
-        text: Amateur radio operators, emergency responders, weather enthusiasts, and community members.    
-      - head: Local & Regional Ties
-        text: Organized at county or regional levels, working closely with NWS offices.
-  - title: How We Operate
-    icon: radio-combat
-    color: blue
-    sections:
-      - head: Real-Time Reporting
-        text: Observations sent via ham radio nets, phone hotlines, apps, or online forms.
-      - head: Training & Certification
-        text: NWS-led courses on severe weather recognition and safe reporting practices. 
-      - head: Integration With Emergency Services
-        text: Coordinate with local emergency management and first responders.
-        
-
----
-
-# What Is SKYWARN®?
-
-<div grid grid-cols-3 gap-3 h-75>
-  <v-clicks>
-    <div border="2 solid white/5" rounded-lg overflow-hidden bg="white/5" backdrop-blur-sm h-full
-      v-for="(item, index) in $frontmatter.items"
-      class="transition-all duration-500 ease-in-out"      
-      :class="$clicks < index +  1 ? 'translate-y-6 opacity-0' : 'translate-y-0 opacity-100'">
-      <div flex items-center bg="white/10" backdrop-blur px-3 py-2 rounded-md>
-        <div :class="`i-carbon:${item.icon} text-${item.color}-300`" text-sm mr-2 />
-        <div font-semibold>
-          {{ item.title }}
-        </div>
-      </div>
-      <div px-4 py-3>
-        <div flex flex-col gap-3>
-          <div v-for="(section, index) in item.sections">
-            <div text-sm font-medium>{{ section.head }}</div>
-            <div text-xs opacity-70>{{ section.text }}</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </v-clicks>
-</div>
-
-<div class="text-xs opacity-70 mt-4">
-  SKYWARN® began in the 1960s after deadly tornado outbreaks highlighted the need for trained spotters.
 </div>
 
 ---
@@ -294,9 +178,19 @@ image: /images/hamradio.webp
 
 # TAG (TN-AL-GA) SKYWARN® Today
 
-Weekly Net: TAG SKYWARN® Net meets every Tuesday at 8:00 PM Eastern on 145.390 MHz with 107.2 Hz tone. GMRS operators join on NGGMRS Northern Core repeaters starting at 7:00 PM.
+**Weekly Nets**
 
-Training Series: SKYWARN® Training Schedule covers a wide range of topics - from heat/hurricane prep to reporting protocols and technical drills (e.g., What3Words, simplex relay training).
+- Ham: Tuesday 8:00 PM Eastern on **145.390 MHz (−, 107.2 Hz)**
+- GMRS: Tuesday 7:00 PM Eastern on NGGMRS Northern Core repeaters
+
+**Backup Frequencies**
+
+- 146.610 MHz (−, 107.2 Hz)
+- Simplex: 146.535 / 146.565 / 146.580 / 147.555 MHz
+
+**Training Series**
+
+Heat & hurricane prep, reporting protocols, technical drills (What3Words, simplex relay), and seasonal severe weather reviews.
 
 ---
 transition: slide-up
@@ -308,26 +202,26 @@ items:
     items:
       - icon: binoculars
         text: Observe & Report
-        subtext:  Watch for severe weather hazards (tornadoes, hail, flooding, damaging winds) and report promptly with location and time.
+        subtext: Watch for severe weather hazards (tornadoes, hail, flooding, damaging winds) and report promptly with location and time.
       - icon: health-cross
         text: Stay Safe
-        subtext: Observe from safe locations - never put yourself in harm’s way.
+        subtext: Observe from safe locations. Never put yourself in harm's way.
       - icon: events
         text: Coordinate
-        subtext:  Work with net control, emergency management, and fellow spotters to share accurate updates.
+        subtext: Work with net control, emergency management, and fellow spotters to share accurate updates.
   - title: What We Don't Do
     icon: close
     color: red
     items:
       - icon: thunderstorm-severe
         text: No Storm Chasing for Thrills
-        subtext: Spotting is not recreational storm chasing - safety & service come first.
+        subtext: Spotting is not recreational storm chasing. Safety and service come first.
       - icon: police
         text: No Emergency Response
-        subtext:  Do not enter damaged areas or perform rescues unless you are trained and authorized.
+        subtext: Do not enter damaged areas or perform rescues unless you are trained and authorized.
       - icon: user-simulation
         text: No Off-Criteria Reports
-        subtext:  Report only significant severe weather or damage as outlined in training.
+        subtext: Report only significant severe weather or damage as outlined in training.
 ---
 
 # Spotter Roles & Reporting
@@ -370,58 +264,198 @@ items:
   </div>
 </div>
 
+---
+transition: fade-out
+items:
+  - icon: tornado-warning
+    title: Tornado / Funnel Cloud
+    text: Tornado on the ground, funnel cloud aloft, or rotating wall cloud.
+    color: red
+  - icon: partly-cloudy
+    title: "Hail: 1 inch or larger"
+    text: Report size by reference object (quarter, golf ball, baseball), not "marble" or "pea".
+    color: cyan
+  - icon: wind-gusts
+    title: "Wind: 50+ mph or damage"
+    text: "Estimated 50+ mph gusts, OR any wind damage: downed trees, power lines, structural damage."
+    color: orange
+  - icon: rain-drop
+    title: Flooding
+    text: Water over roads, fast-rising creeks, water rescues, road closures.
+    color: blue
+  - icon: snow
+    title: Winter Weather
+    text: Significant snowfall, ice accumulation, freezing rain accretion, sleet.
+    color: gray
+  - icon: warning
+    title: Other Hazards
+    text: Lightning-caused fires, dense fog, dust storms, or anything threatening life or property.
+    color: yellow
+---
+
+# What to Report
+
+<div class="grid grid-cols-3 gap-4 mt-6">
+  <v-clicks>
+    <div v-for="item in $frontmatter.items" :key="item.title"
+         class="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur">
+      <div class="flex items-center gap-2 mb-2">
+        <div :class="`i-carbon:${item.icon} text-${item.color}-300 text-xl`"></div>
+        <div class="font-semibold text-sm">{{ item.title }}</div>
+      </div>
+      <div class="text-xs opacity-80">{{ item.text }}</div>
+    </div>
+  </v-clicks>
+</div>
+
+<div class="text-xs opacity-60 mt-6 text-center">
+  When in doubt, report. Net Control decides what gets relayed to NWS.
+</div>
 
 ---
-layout: default
+transition: fade-out
+---
+
+# How to Report
+
+<div class="grid grid-cols-2 gap-6 mt-4">
+  <div class="rounded-xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+    <div class="flex items-center gap-2 mb-3">
+      <div class="i-carbon:radio-combat text-blue-300 text-xl"></div>
+      <div class="font-semibold">The Report Format</div>
+    </div>
+    <div class="text-sm space-y-2">
+      <div><span class="font-semibold text-blue-200">1. Callsign</span>: identify yourself</div>
+      <div><span class="font-semibold text-blue-200">2. Location</span>: What3Words, cross-streets, or coordinates</div>
+      <div><span class="font-semibold text-blue-200">3. Time</span>: when observed</div>
+      <div><span class="font-semibold text-blue-200">4. What you saw</span>: be specific, use size references</div>
+      <div><span class="font-semibold text-blue-200">5. Trend</span>: getting worse, ending, moving direction</div>
+    </div>
+  </div>
+  <div class="rounded-xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+    <div class="flex items-center gap-2 mb-3">
+      <div class="i-carbon:document text-green-300 text-xl"></div>
+      <div class="font-semibold">Example</div>
+    </div>
+    <div class="text-sm italic opacity-90 mt-2">
+      "Net, this is W3UWU. Reporting 1.25-inch hail at the corner of
+      Hixson Pike and Northpoint Boulevard, observed at 4:32 PM.
+      Hail still falling and increasing in size."
+    </div>
+    <div class="text-xs opacity-60 mt-4 not-italic">
+      Short. Specific. Factual. No speculation.
+    </div>
+  </div>
+</div>
+
+<div class="grid grid-cols-3 gap-4 mt-6">
+  <v-clicks>
+    <div class="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur">
+      <div class="text-xs uppercase tracking-wide text-blue-200/90 font-semibold mb-1">Primary</div>
+      <div class="text-sm font-semibold">Ham / GMRS Net</div>
+      <div class="text-xs opacity-70">Net Control relays directly to NWS MRX.</div>
+    </div>
+    <div class="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur">
+      <div class="text-xs uppercase tracking-wide text-blue-200/90 font-semibold mb-1">Alternate</div>
+      <div class="text-sm font-semibold">mPING App / NWS Form</div>
+      <div class="text-xs opacity-70">Direct-to-NWS reporting when off-air.</div>
+    </div>
+    <div class="rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur">
+      <div class="text-xs uppercase tracking-wide text-blue-200/90 font-semibold mb-1">Backup</div>
+      <div class="text-sm font-semibold">Phone NWS MRX</div>
+      <div class="text-xs opacity-70">Call the spotter hotline if all else fails.</div>
+    </div>
+  </v-clicks>
+</div>
+
+---
+transition: fade-out
+items:
+  - title: Primary Net
+    icon: radio-combat
+    color: blue
+    text: 145.390 MHz (107.2 Hz) is the canonical TAG SKYWARN® net. NGGMRS Northern Core repeaters extend coverage to GMRS operators.
+  - title: Redundancy Matters
+    icon: connect
+    color: cyan
+    text: Backups include 146.610 MHz and simplex on 146.535 / .565 / .580 / 147.555. Keep more than one path ready.
+  - title: Wide-Area Reach
+    icon: satellite
+    color: teal
+    text: HF, VHF/UHF, APRS, EchoLink, and AllStarLink let reports travel beyond local terrain.
+  - title: NWS MRX Listens
+    icon: headphones
+    color: green
+    text: NWS Morristown actively monitors these nets and incorporates spotter reports into warning decisions.
+  - title: GMRS Partnership
+    icon: group
+    color: orange
+    text: North Georgia GMRS (NGGMRS) operates an enhanced SKYWARN®-aligned network across SE TN, NW GA, and NE AL.
+  - title: When Radio Fails
+    icon: phone
+    color: gray
+    text: mPING app, NWS spotter web forms, and direct phone calls keep reports flowing when the air goes quiet.
 ---
 
 # Radio Communications: The Backbone
 
-Amateur radio nets have long been crucial during severe events, especially when conventional systems fail.  
-**NWS Morristown (MRX)** actively monitors these nets and relies on spotter reports.
+<div class="grid grid-cols-3 gap-4 mt-6">
+  <v-clicks>
+    <div v-for="item in $frontmatter.items" :key="item.title"
+         class="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur">
+      <div class="flex items-center gap-2 mb-2">
+        <div :class="`i-carbon:${item.icon} text-${item.color}-300 text-xl`"></div>
+        <div class="font-semibold text-sm">{{ item.title }}</div>
+      </div>
+      <div class="text-xs opacity-80">{{ item.text }}</div>
+    </div>
+  </v-clicks>
+</div>
 
-This includes HF, VHF/UHF, APRS, EchoLink, AllStarLink, and internet links.
-
-When radio isn’t available, reports can also be sent via the mPING app, NWS spotter forms, or by phone.
-
-## Strengthening With GMRS
-
-North Georgia GMRS (NGGMRS) has built an enhanced SKYWARN® network, expanding coverage across SE Tennessee, NW Georgia, and NE Alabama.  
-
-✅ Redundant paths matter:  
-- Primary: 145.390 MHz (-, 107.2 Hz)  
-- Backups: 146.610 MHz (-, 107.2 Hz) or simplex 146.535/565/580/147.555  
-
+<div class="text-xs opacity-60 mt-6 text-center">
+  Amateur radio nets have long been crucial during severe events, especially when conventional systems fail.
+</div>
 
 ---
 level: 2
+class: text-center
 ---
 
 # Why It Matters in Chattanooga
 
-Local spotters—hams, GMRS users, public service volunteers—are the **frontline eyes & ears** for the NWS.  
+Local spotters (hams, GMRS users, public service volunteers) are the **frontline eyes and ears** for the NWS.
 
-Weekly practice and shared infrastructure build resilience before critical weather strikes.
+Weekly practice and shared infrastructure build resilience *before* critical weather strikes.
 
-**When Nets Activate**  
-- Triggered by NWS MRX or Emergency Management during severe watches/warnings.  
-- Activation notices pushed via the *TN-AL-GA Regional SKYWARN® Net* Telegram channel.  
-- Reports relayed directly to NWS offices.
-
-
-# How to Plug In
-
-- 📚 Attend/host NWS SKYWARN® training *(covers storm ID, reporting methods, and safety)*  
-- 📻 Join Tuesday nets (Ham 8:00 PM / GMRS 7:00 PM).  
-- 📝 Practice correct, criteria-based reporting.  
-- 📢 Recruit & spread awareness - more trained spotters = stronger coverage.
+<div class="mt-8 grid grid-cols-2 gap-6 text-left">
+  <div class="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur">
+    <div class="flex items-center gap-2 mb-2">
+      <div class="i-carbon:warning-alt text-orange-300 text-lg"></div>
+      <div class="font-semibold">When Nets Activate</div>
+    </div>
+    <div class="text-sm opacity-80">
+      Triggered by NWS MRX or Emergency Management during severe watches/warnings.
+      Activation notices push out via the <em>TN-AL-GA Regional SKYWARN® Net</em> Telegram channel.
+    </div>
+  </div>
+  <div class="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur">
+    <div class="flex items-center gap-2 mb-2">
+      <div class="i-carbon:connect text-green-300 text-lg"></div>
+      <div class="font-semibold">Where Reports Go</div>
+    </div>
+    <div class="text-sm opacity-80">
+      Net Control relays observations directly to NWS forecasters, where they
+      influence warning decisions in near-real time.
+    </div>
+  </div>
+</div>
 
 ---
 transition: fade-out
 class: text-center
 ---
 
-# August 12, 2025 - Chattanooga Flash Flooding
+# August 12, 2025: Chattanooga Flash Flooding
 
 <div class="mt-6 grid grid-cols-2 gap-6">
   <v-clicks>
@@ -432,9 +466,9 @@ class: text-center
       </div>
       <div class="text-sm font-semibold">Second-Wettest Day on Record</div>
       <div class="text-xs opacity-80 space-y-2">
-        • Over 6 in (~6.4 in) of rain in a single day.<br>
+        • ~6.4 inches of rain in a single day.<br>
         • Widespread flash flooding closed I-24, submerged roads, and triggered dozens of rescues.<br>
-        • A state of emergency was declared in Hamilton County.
+        • State of emergency declared in Hamilton County.
       </div>
     </div>
     <div class="rounded-xl border border-white/10 bg-white/5 p-4 text-left backdrop-blur">
@@ -446,17 +480,133 @@ class: text-center
       <div class="text-xs opacity-80 space-y-2">
         • A mother, father, and child were killed when a water-saturated tree fell on their car in East Ridge.<br>
         • A fourth individual was swept away after bypassing rescue barricades.<br>
-        • Fire & sheriff’s deputies performed dozens of high-water rescues - including stranded motorists and homeowners - using boats and rapid-response teams.
+        • Fire & sheriff's deputies performed dozens of high-water rescues using boats and rapid-response teams.
       </div>
     </div>
   </v-clicks>
 </div>
-<div class="mt-6 grid grid-cols-3 gap-4">
+
+<div class="mt-4 rounded-xl border border-blue-400/30 bg-blue-500/10 p-4 backdrop-blur text-left">
+  <div class="flex items-center gap-2 mb-2">
+    <div class="i-carbon:radio-combat text-blue-300 text-lg"></div>
+    <div class="text-xs uppercase tracking-wide text-blue-200/90 font-semibold">SKYWARN®'s Role</div>
+  </div>
+  <div class="text-xs opacity-90">
+    <!-- TODO: Fill in specifics, e.g., net activation time, number of spotter reports relayed to NWS MRX,
+         coordination with Hamilton County EMA, notable reports that influenced warnings. -->
+    Spotter reports relayed in real time to NWS MRX and Hamilton County EMA, contributing ground truth that
+    radar alone couldn't provide during the rapid onset.
+  </div>
+</div>
+
+<div class="mt-4 grid grid-cols-3 gap-4">
+  <img src="/images/flood/flood-1.png" alt="Flooded road" class="rounded-lg shadow-md object-cover h-32 w-full" />
+  <img src="/images/flood/flood-2.jpg" alt="Rescue crews" class="rounded-lg shadow-md object-cover h-32 w-full" />
+  <img src="/images/flood/flood-3.jpg" alt="Cars submerged" class="rounded-lg shadow-md object-cover h-32 w-full" />
+</div>
+
+---
+transition: fade-out
+layout: center
+class: text-center
+glowSeed: 205
+team:
+  - name: Mark Rose
+    title: District Coordinator
+    ham: KA0YDC
+    img: /images/placeholder.webp
+  - name: Philip Sutherland
+    title: Net Control
+    ham: KQ4EVW
+    img: /images/team/philipsutherland.jpg
+  - name: Jim Knight
+    title: Alt Net Control
+    ham: KD4EHN
+    img: /images/placeholder.webp
+  - name: James Wells
+    title: Net Control
+    ham: KO4MKP
+    gmrs: WRKK629
+    img: /images/team/jameswells.jpg
+  - name: Stuart Neil
+    title: Net Control
+    ham: KQ4KIH
+    img: /images/team/stuartneil.jpg
+  - name: Ronnie Craig
+    title: Net Control
+    gmrs: WRKJ453
+    img: /images/placeholder.webp
+  - name: Jeff Martin
+    ham: W4EMZ
+    img: /images/placeholder.webp
+  - name: Gary Ownsby
+    ham: AK4ZX
+    img: /images/team/garyownsby.jpg
+  - name: Dewayne Siddon
+    title: ARES/ACS Emergency Coordinator
+    ham: KE4IDH
+    img: /images/team/dewaynesiddon.jpg
+  - name: William Roush
+    title: Net Control
+    ham: W3UWU
+    gmrs: WRWF503
+    img: /images/team/williamroush.png
+---
+
+# Meet the Team
+
+<script setup>
+const base = import.meta.env.BASE_URL
+const pub  = (p) => p ? base + p.replace(/^\/+/, '') : null
+</script>
+
+<div class="grid grid-cols-5 gap-6 mt-5">
   <v-clicks>
-    <img src="/images/flood/flood-1.png" alt="Flooded road" class="rounded-lg shadow-md object-cover h-40 w-full" />
-    <img src="/images/flood/flood-2.jpg" alt="Rescue crews" class="rounded-lg shadow-md object-cover h-40 w-full" />
-    <img src="/images/flood/flood-3.jpg" alt="Cars submerged" class="rounded-lg shadow-md object-cover h-40 w-full" />
+    <div
+      v-for="(person, index) in $frontmatter.team"
+      :key="person.name"
+      class="flex flex-col items-center text-center transition-all duration-500 ease-in-out"
+      :class="$clicks < index +  1 ? 'translate-y-6 opacity-0' : 'translate-y-0 opacity-100'"
+    >
+      <img :src="pub(person.img)" :alt="person.name" class="w-28 h-28 rounded-full object-cover shadow" />
+      <div class="mt-3 font-bold">{{ person.name }}</div>
+      <div v-if="person.title" class="text-sm text-gray-400">
+        {{ person.title }}
+      </div>
+      <div v-if="person.ham || person.gmrs" class="text-sm text-gray-400">
+        {{ [person.ham, person.gmrs].filter(Boolean).join(' / ') }}
+      </div>
+    </div>
   </v-clicks>
 </div>
 
+---
+class: text-center
+---
 
+# How to Plug In
+
+<div class="grid grid-cols-3 gap-4 mt-6">
+  <v-clicks>
+    <div class="rounded-xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+      <div class="i-carbon:education text-blue-300 text-3xl mb-3 mx-auto"></div>
+      <div class="font-semibold mb-2">Get Trained</div>
+      <div class="text-xs opacity-80">Attend an NWS SKYWARN® class covering storm ID, reporting methods, and safety.</div>
+    </div>
+    <div class="rounded-xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+      <div class="i-carbon:radio-combat text-green-300 text-3xl mb-3 mx-auto"></div>
+      <div class="font-semibold mb-2">Check In</div>
+      <div class="text-xs opacity-80">Tuesday nets: Ham 8:00 PM ET on 145.390 (107.2 Hz), GMRS 7:00 PM ET on NGGMRS Northern Core.</div>
+    </div>
+    <div class="rounded-xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+      <div class="i-carbon:notification text-orange-300 text-3xl mb-3 mx-auto"></div>
+      <div class="font-semibold mb-2">Stay Informed</div>
+      <div class="text-xs opacity-80">Join the TN-AL-GA Regional SKYWARN® Net Telegram channel for activations.</div>
+    </div>
+  </v-clicks>
+</div>
+
+<div class="mt-10 text-3xl font-semibold">Questions?</div>
+<div class="text-sm opacity-70 mt-3">
+  TAG SKYWARN® • Hamilton County, Tennessee • NWS Morristown (MRX)
+</div>
